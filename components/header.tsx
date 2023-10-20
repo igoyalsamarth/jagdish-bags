@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function Header() {
     return (
         <header className="flex w-full bg-[#fefffe] py-6 border-b-2 border-gray-200 justify-center items-center">
-            <div className="flex justify-between w-[1200px] items-center">
+            <div className="flex justify-between 2xl:w-[1170px] xl:w-[962px] lg:w-[738px] md:w-[451px] items-center">
                 <div className="flex gap-14">
                     <Image src='/next.svg' alt="" height={40} width={40} />
                     <div className="flex gap-4">
@@ -14,7 +14,7 @@ export default async function Header() {
                     </div>
                 </div>
                 <div className="flex">
-                    <p>theme switch and other stuff</p>
+                    <p>stuff</p>
                 </div>
             </div>
         </header>
