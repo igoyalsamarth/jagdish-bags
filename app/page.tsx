@@ -1,9 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function Home() {
   return (
-    <div className='flex flex-col w-full justify-center items-center'>
+    <div className='flex justify-center'>
       <div className='grid grid-cols-12 sm:grid-cols-6 md:grid-cols-6 2xl:w-[1170px] xl:w-[962px] lg:w-[738px] md:w-[451px] sm:w-[95%] py-10 gap-10'>
         <section className='flex col-span-12 sm:col-span-6 md:col-span-6 w-full items-center justify-center text-center bg-[#01a9e9]/40 rounded-2xl py-6 px-4'>
           <p className='text-8xl font-semibold sm:text-5xl text-white md:text-6xl lg:text-7xl'>WE MAKE <br />
@@ -50,7 +49,7 @@ export default async function Home() {
             </div>
           </div>
           <div className='flex justify-between items-center 2xl:px-14 xl:px-14 sm:flex-col-reverse sm:gap-6'>
-          <Link href='/contact' className='py-2 px-4 rounded-full text-xs font-bold tracking-wider bg-[#01a9e9]/40 text-[#fefffe] hover:bg-[#01a9e9]'>CONTACT</Link>
+          <Link href='/contact' className='py-2 px-4 rounded-full text-xs font-bold tracking-wider bg-[#01a9e9]/40 text-[#fefffe] hover:bg-[#01a9e9]/60'>CONTACT</Link>
           <div className='flex gap-6'>
             <div className='flex w-[20px] aspect-square rounded-full bg-[#01a9e9]'>
             </div>
@@ -61,7 +60,7 @@ export default async function Home() {
             <div className='flex w-[20px] aspect-square rounded-full bg-black'>
             </div>
           </div>
-            <Link href='/shop' className='py-2 px-4 rounded-full text-xs font-bold tracking-wider bg-[#01a9e9]/40 text-[#fefffe] hover:bg-[#01a9e9]'>SHOP</Link>
+            <Link href='/shop' className='py-2 px-4 rounded-full text-xs font-bold tracking-wider bg-[#01a9e9]/40 text-[#fefffe] hover:bg-[#01a9e9]/60'>SHOP</Link>
           </div>
         </section>
         <section className='flex flex-col col-span-12 sm:col-span-6 md:col-span-6 w-full rounded-2xl p-6 bg-[#fefffe] gap-6'>
