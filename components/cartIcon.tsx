@@ -1,8 +1,5 @@
 'use client'
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { LocalCart } from "./nonWovenTile";
-import { RootState } from "@/redux/store";
 import { useAppSelector } from "@/redux/store";
 
 export default function CartIcon(){

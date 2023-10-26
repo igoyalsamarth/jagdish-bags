@@ -4,8 +4,8 @@ export interface ICartState {
     initial : number
   }
   
-  const initialState: ICartState = {
-    initial: (JSON.parse(localStorage.getItem('local_cart') || '{}').length)
+const initialState: ICartState = {
+    initial: 0
   };
 
 export const cartSlice = createSlice({
