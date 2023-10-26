@@ -1,29 +1,23 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-const cartSlice = createSlice({
-    name: 'cart',
-    initialState: [],
+export interface ICartState {
+    initial : number
+  }
+  
+  const initialState: ICartState = {
+    initial: (JSON.parse(localStorage.getItem('local_cart') || '{}').length)
+  };
+
+export const cartSlice = createSlice({
+    name: "cart",
+    initialState,
     reducers: {
-        addToCart: (state, action: PayloadAction<number>) => {
-            const itemExists = localStorage.find((item: any) => item.id === action.payload);
-            if (itemExists) {
-                itemExists.quantity++;
-            } else {
-                localStorage.push({ ...action, quantity: 1 });
-            }
-        },
-        incrementQuantity: (state, action: PayloadAction<number>) => {
-            const itemExists = localStorage.find((item: any) => item.id === action.payload);
-            if (itemExists) {
-                itemExists.quantity++;
-            }
+        addToCar: (state, action: PayloadAction<number>) => {
+            state.initial = action.payload
         }
     }
 })
 
-export const cartReducer = cartSlice.reducer;
+export const { addToCar } = cartSlice.actions;
 
-export const {
-    addToCart,
-    incrementQuantity,
-  } = cartSlice.actions;
+export const cartReducer = cartSlice.reducer;
