@@ -1,21 +1,29 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { LocalCart } from "@/components/nonWovenTile";
+import { PayloadAction, createSlice, current } from "@reduxjs/toolkit";
 
-export interface ICartState {
-    initial : number
+const initialState: Array<LocalCart> = [
+  {
+    "borderColor":null,
+    "borderGSM":0,
+    "handleColor":null,
+    "handleType":null
   }
-  
-const initialState: ICartState = {
-    initial: 0
-  };
-
+]
+console.log(typeof initialState)
 export const cartSlice = createSlice({
-    name: "cart",
-    initialState,
-    reducers: {
-        addToCar: (state, action: PayloadAction<number>) => {
-            state.initial = action.payload
-        }
+  name: "cart",
+  initialState,
+  reducers: {
+    addToCar: (state, action: PayloadAction<LocalCart>) => {
+      console.log(current(state));
+      console.log(action);
+      console.log(initialState);
+      console.log(typeof initialState)
+      state.push(action.payload)
+      //return [...state,{"borderColor":action.payload.borderColor,"borderGSM":action.payload.borderGSM,"handleColor":action.payload.handleColor,"handleType":action.payload.handleType}]
+      console.log(current(state));
     }
+  }
 })
 
 export const { addToCar } = cartSlice.actions;

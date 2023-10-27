@@ -4,7 +4,7 @@ import { useAppSelector } from "@/redux/store";
 
 export default function CartIcon(){
 
-    let item:number = useAppSelector((state) => state.cart.initial) | 0;
+    let item:number =  0;
 
     return(
         <Link href='/cart' className="flex relative items-center">
