@@ -24,56 +24,8 @@ export interface LocalCart {
   borderColor: HandleColor | null
 }
 
-export default function NonWovenTile () {
+export default function NonWovenTile() {
   const dispatch = useAppDispatch()
-/*
-  const addToCart = (
-    handleType: LocalCart['handleType'],
-    handleColor: LocalCart['handleColor'],
-    borderGSM: LocalCart['borderGSM'],
-    borderColor: LocalCart['handleColor']
-  ) => {
-    let local_cart: Array<LocalCart> = JSON.parse(
-      localStorage.getItem('local_cart') || 'null'
-    )
-    if (local_cart === null) {
-      localStorage.setItem(
-        'local_cart',
-        JSON.stringify([
-          {
-            handleType: handleType,
-            handleColor: handleColor,
-            borderGSM: borderGSM,
-            borderColor: borderColor
-          }
-        ])
-      )
-    } else {
-      localStorage.setItem(
-        'local_cart',
-        JSON.stringify([
-          ...local_cart,
-          {
-            handleType: handleType,
-            handleColor: handleColor,
-            borderGSM: borderGSM,
-            borderColor: borderColor
-          }
-        ])
-      )
-    }
-    //console.log(JSON.parse(localStorage.getItem('local_cart') || '{}'))
-    dispatch(addToCar(JSON.parse(localStorage.getItem('local_cart') || '{}')))
-    dispatch(
-      addToCar({
-        handleType: handleType,
-        handleColor: handleColor,
-        borderGSM: borderGSM,
-        borderColor: borderColor
-      })
-    )
-  }
-  */
   return (
     <section className='flex flex-col col-span-12 sm:col-span-6 md:col-span-6 w-full bg-[#fefffe] rounded-xl p-6 gap-6'>
       <p className='text-sm font-bold text-gray-500 tracking-widest'>

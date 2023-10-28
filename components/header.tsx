@@ -4,7 +4,7 @@ import CartIcon from "./cartIcon";
 
 export default async function Header() {
     return (
-        <header className="flex w-full bg-[#fefffe] py-6 border-b-2 border-gray-200 justify-center items-center">
+        <header className="flex w-full bg-[#fefffe] py-6 border-b-2 border-gray-200 justify-center items-center h-[74px]">
             <div className="flex justify-between 2xl:w-[1170px] xl:w-[962px] lg:w-[738px] md:w-[451px] sm:w-[95%] items-center px-4">
                 <div className="flex gap-14">
                     <Image src='/next.svg' alt="" height={40} width={40} />

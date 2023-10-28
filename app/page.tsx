@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 export default async function Home() {
   return (
-    <div className='flex justify-center'>
-      <div className='grid grid-cols-12 sm:grid-cols-6 md:grid-cols-6 2xl:w-[1170px] xl:w-[962px] lg:w-[738px] md:w-[451px] sm:w-[95%] py-10 gap-10'>
+    <div className="flex justify-center min-h-[calc(100vh-74px)]">
+    <div className='grid grid-cols-12 sm:grid-cols-6 md:grid-cols-6 2xl:w-[1170px] xl:w-[962px] lg:w-[738px] md:w-[451px] sm:w-[95%] py-10 gap-10'>
         <section className='flex col-span-12 sm:col-span-6 md:col-span-6 w-full items-center justify-center text-center bg-[#01a9e9]/40 rounded-2xl py-6 px-4'>
           <p className='text-8xl font-semibold sm:text-5xl text-white md:text-6xl lg:text-7xl'>WE MAKE <br />
             EARTH PRETTIER <br />AND <br />PLASTICS DISAPPEAR.<br />
