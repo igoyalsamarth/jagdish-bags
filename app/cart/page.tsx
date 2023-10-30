@@ -9,7 +9,7 @@ export default async function Page() {
                 <p className='text-sm font-bold text-gray-500 tracking-widest'>CART</p>
                 <CartItems />
                 </section>
-                <section className='flex flex-col sticky col-span-4 sm:col-span-6 md:col-span-6 w-full bg-[#fefffe] rounded-xl p-6 gap-6 h-fit top-28'>
+                <section className='flex flex-col sticky col-span-4 sm:col-span-6 md:col-span-6 w-full bg-[#fefffe] rounded-xl p-6 gap-6 h-fit top-[115px]'>
                 <p className='text-sm font-bold text-gray-500 tracking-widest'>TOTAL</p>
                 <CartTotal />
                 </section>

@@ -2,7 +2,13 @@
 
 import Link from 'next/link'
 import { useAppDispatch } from '@/redux/store'
-import { addToCar } from '@/redux/cart.slice'
+import { addQuantity, addToCart } from '@/redux/cart.slice'
+
+enum BagType{
+  nonWoven = 'Non-Woven',
+  lamination = "lamination",
+  canvas = "canvas"
+}
 
 enum HandleType {
   light = 'light',
@@ -18,10 +24,12 @@ enum HandleColor {
 }
 
 export interface LocalCart {
-  handleType: HandleType | null
-  handleColor: HandleColor | null
-  borderGSM: number
-  borderColor: HandleColor | null
+  bagType: BagType;
+  handleType: HandleType; 
+  handleColor: HandleColor;
+  borderGSM: number;
+  borderColor: HandleColor;
+  amount: number;
 }
 
 export default function NonWovenTile() {
@@ -45,11 +53,13 @@ export default function NonWovenTile() {
             <button
               onClick={() =>
                 dispatch(
-                  addToCar({
+                  addQuantity({
+                    bagType: BagType.nonWoven,
                     handleType: HandleType.normal,
                     handleColor: HandleColor.biege,
                     borderGSM: 90,
-                    borderColor: HandleColor.green
+                    borderColor: HandleColor.green,
+                    amount:1000
                   })
                 )
               }
