@@ -12,10 +12,14 @@ export default function CartTotal() {
     const [enquiry, setEnquiry] = useState<boolean>(false);
     const [phone, setPhone] = useState<string>('');
     const [amount, setAmount] = useState<number>(0);
-    const [text, setText] = useState<string>("I'm%20enquiring%20about%20the%20following%20products:%0D%0A");
+    const [text, setText] = useState<string>("");
+    const initialText = "I'm%20enquiring%20about%20the%20following%20products:%0D%0A";
+    const finalText = "%0D%0AThank%20You";
 
     useEffect(() => {
         setAmount(items.reduce((acc,cur) => acc + (cur.bagType === 'Non-Woven'? cur.amount*20 : cur.bagType === 'lamination'? cur.amount*20: 0),0))
+        setText(initialText + items.map((Items) => {Object.keys(`Bag Type: ${Items.bagType} x ${Items.amount} Totaling: ${Items.bagType === 'Non-Woven'? Items.amount*2 : 0}`).join('%0D%0A')}) + `%0D%0ATotal Amount:%20%20${amount}` + finalText)
+        console.log(text)
     }, [items]);
     
     if (!items.length) {
@@ -56,7 +60,7 @@ export default function CartTotal() {
                         <p className="text-sm font-bold text-gray-500">+91</p>
                         <input placeholder="WhatsApp Number" onChange={e => setPhone(e.target.value)} className=" bg-[#f5f7f7] p-2 rounded-sm text-gray-500 text-sm font-bold placeholder:font-normal" autoFocus></input>
                     </div>
-                    <Link href={`https://wa.me/91${phone}/?text=test`} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">SEND ENQUIRY</Link>
+                    <Link href={`https://wa.me/91${phone}/?text=${text}`} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">SEND ENQUIRY</Link>
                 </form>
             }
         </div>
