@@ -56,7 +56,7 @@ export default function CartTotal() {
                         <p className="text-sm font-bold text-gray-500">+91</p>
                         <input placeholder="WhatsApp Number" onChange={e => setPhone(e.target.value)} className=" bg-[#f5f7f7] p-2 rounded-sm text-gray-500 text-sm font-bold placeholder:font-normal" autoFocus></input>
                     </div>
-                    <Link href={`https://wa.me/91${phone}/?text=${test}`} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">SEND ENQUIRY</Link>
+                    <Link href={`https://wa.me/91${phone}/?text=test`} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">SEND ENQUIRY</Link>
                 </form>
             }
         </div>
