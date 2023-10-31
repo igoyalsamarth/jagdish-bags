@@ -1,4 +1,3 @@
-//I'm%20inquiring%20about%20the%20apartment%20listing
 'use client'
 import { useAppSelector } from "@/redux/store";
 import { LocalCart } from "./nonWovenTile";
@@ -9,19 +8,16 @@ export default function CartTotal() {
 
     const items: Array<LocalCart> = useAppSelector((state) => state.cart)
 
-    const [enquiry, setEnquiry] = useState<boolean>(false);
-    const [phone, setPhone] = useState<string>('');
-    const [amount, setAmount] = useState<number>(0);
+    const [amount, setAmount] = useState<number>(items.reduce((acc,cur) => acc + (cur.bagType === 'Non-Woven'? cur.amount*20 : cur.bagType === 'lamination'? cur.amount*20: 0),0));
     const [text, setText] = useState<string>("");
-    const initialText = "I'm%20enquiring%20about%20the%20following%20products:%0D%0A";
-    const finalText = "%0D%0AThank%20You";
+    const initialText = "I'm%20enquiring%20about%20the%20following%20products:%0D%0A%0D%0A";
+    const finalText = "%0D%0A%0D%0A*Thank%20You*";
 
     useEffect(() => {
         setAmount(items.reduce((acc,cur) => acc + (cur.bagType === 'Non-Woven'? cur.amount*20 : cur.bagType === 'lamination'? cur.amount*20: 0),0))
-        setText(initialText + items.map((Items) => {Object.keys(`Bag Type: ${Items.bagType} x ${Items.amount} Totaling: ${Items.bagType === 'Non-Woven'? Items.amount*2 : 0}`).join('%0D%0A')}) + `%0D%0ATotal Amount:%20%20${amount}` + finalText)
-        console.log(text)
+        setText(initialText + items.map((Items, index) => {return(`Product%20${index+1}:%20*${Items.bagType}%20Bags*%0D%0AQuantity:%20*${Items.amount}*%0D%0ABorder%20Color:%20*${Items.borderColor.toUpperCase()}*%0D%0ABorder%20GSM:%20*${Items.borderGSM}*%0D%0AHandle%20Color:%20*${Items.handleColor.toUpperCase()}*%0D%0AHandle%20Type:%20*${Items.handleType.toUpperCase()}*%0D%0ATotaling:%20*₹${Items.bagType === 'Non-Woven'? Items.amount*20 : 0}*`)}).join('%0D%0A%0D%0A') + `%0D%0A%0D%0ATotal%20Amount:%20*₹${amount}*` + finalText)
     }, [items]);
-    
+
     if (!items.length) {
         return (
             <div className="flex flex-col gap-6">
@@ -53,16 +49,7 @@ export default function CartTotal() {
                 <p className=" text-xl font-bold text-gray-700">₹ {amount}</p>
             </div>
             <p className="text-[10px] font-bold text-red-400 leading-none text-justify">DISCLAIMER: FOR LEGAL PURPOSES, THE ABOVE AMOUNT EXCLUDES ANY TAXES WHATSOEVER, HENCE, THIS IS NEITHER THE FINAL COST NOR THE RECIPT OF THE ORDER</p>
-            <button onClick={() => setEnquiry(true)} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">PLACE ENQUIRY</button>
-            {enquiry &&
-                <form className="flex flex-col gap-4 items-center">
-                    <div className="flex items-center gap-2">
-                        <p className="text-sm font-bold text-gray-500">+91</p>
-                        <input placeholder="WhatsApp Number" onChange={e => setPhone(e.target.value)} className=" bg-[#f5f7f7] p-2 rounded-sm text-gray-500 text-sm font-bold placeholder:font-normal" autoFocus></input>
-                    </div>
-                    <Link href={`https://wa.me/91${phone}/?text=${text}`} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">SEND ENQUIRY</Link>
-                </form>
-            }
+            <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}/?text=${text}`} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">PLACE ENQUIRY</Link>
         </div>
     );
 }
