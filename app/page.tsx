@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function Home() {
@@ -67,16 +68,16 @@ export default async function Home() {
           <p className='text-sm font-bold text-gray-500 tracking-widest'>OUR CLIENTS</p>
           <div className='grid grid-cols-12 sm:grid-cols-6 md:grid-cols-6 gap-6'>
             <div className='flex col-span-3 flex-col justify-center items-center border border-gray-400 rounded-lg p-4 aspect-square'>
-              <img src='/mp_masale.jpg' alt='' loading='lazy' width='200px' height='200px'></img>
+              <Image src='/mp_masale.jpg' alt='' width={200} height={200}/>
             </div>
             <div className='flex col-span-3 flex-col justify-center items-center border border-gray-400 rounded-lg p-4 aspect-square'>
-              <img src='/mp_dry.jpg' alt='' loading='lazy' width='200px' height='200px'></img>
+              <Image src='/mp_dry.jpg' alt='' width={200} height={200}/>
             </div>
             <div className='flex col-span-3 flex-col justify-center items-center border border-gray-400 rounded-lg p-4 aspect-square'>
-              <img src='/hlrl.jpg' alt='' loading='lazy' width='200px' height='200px'></img>
+              <Image src='/hlrl.jpg' alt='' width={200} height={200}/>
             </div>
             <div className='flex col-span-3 flex-col justify-center items-center border border-gray-400 rounded-lg p-4 aspect-square'>
-              <img src='/govind.jpg' alt='' loading='lazy' width='200px' height='200px'></img>
+              <Image src='/govind.jpg' alt='' width={200} height={200}/>
             </div>
           </div>
         </section>

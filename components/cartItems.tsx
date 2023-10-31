@@ -14,7 +14,7 @@ export default function CartItems() {
                 {
                     items.map((Items:LocalCart, index: number) => {
                         return (
-                            <div className="flex rounded-lg border border-gray-300 p-4 gap-10 relative" key={index}>
+                            <div className="flex rounded-lg border border-gray-300 p-4 gap-10 relative md:flex-col md:items-center sm:flex-col sm:items-center lg:flex-col lg:items-center" key={index}>
                                 <div className="flex w-[200px] h-[200px] border border-gray-100">Image</div>
                                 <div className="flex flex-col gap-4 justify-between">
                                     <p className='text-sm font-bold text-gray-500 tracking-widest uppercase'>{Items.bagType} BAGS</p>
