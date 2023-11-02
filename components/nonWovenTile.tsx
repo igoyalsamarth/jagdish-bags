@@ -4,19 +4,19 @@ import Link from 'next/link'
 import { useAppDispatch } from '@/redux/store'
 import { addQuantity, addToCart } from '@/redux/cart.slice'
 
-enum BagType {
+export enum BagType {
   nonWoven = 'Non-Woven',
   lamination = "lamination",
   canvas = "canvas"
 }
 
-enum HandleType {
+export enum HandleType {
   light = 'light',
   normal = 'normal',
   heavy = 'heavy'
 }
 
-enum HandleColor {
+export enum HandleColor {
   biege = 'biege',
   green = 'green',
   red = 'red',
@@ -41,8 +41,8 @@ export default function NonWovenTile() {
       </p>
       <div className='flex flex-col w-full gap-6 items-center'>
         <div className='flex w-full gap-4 md:flex-col-reverse sm:flex-col-reverse'>
-          <div className='flex w-2/3 md:w-full sm:w-full'>test min qty: cost:</div>
-          <div className='flex justify-center items-center'>
+          <div className='flex w-3/5 md:w-full sm:w-full bg-slate-100'>test min qty: cost:</div>
+          <div className='flex justify-center items-center w-2/5 md:w-full sm:w-full bg-black'>
           <div className='w-[200px] h-[200px] border border-gray-200'></div>
           </div>
         </div>
