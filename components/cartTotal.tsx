@@ -49,7 +49,7 @@ export default function CartTotal() {
                 <p className=" text-xl font-bold text-gray-700">₹ {amount}</p>
             </div>
             <p className="text-[10px] font-bold text-red-400 leading-none text-justify">DISCLAIMER: FOR LEGAL PURPOSES, THE ABOVE AMOUNT EXCLUDES ANY TAXES WHATSOEVER, HENCE, THIS IS NEITHER THE FINAL COST NOR THE RECIPT OF THE ORDER</p>
-            <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}/?text=${text}`} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">PLACE ENQUIRY</Link>
+            <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_PHONE_NUMBER}/?text=${text}`} className="bg-[#f498d1] font-bold text-sm text-white py-2 px-4 rounded-full hover:bg-[#f67ec8]">PLACE ENQUIRY</Link>
         </div>
     );
 }
