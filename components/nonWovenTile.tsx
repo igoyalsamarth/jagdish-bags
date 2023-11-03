@@ -10,25 +10,74 @@ export enum BagType {
   canvas = "canvas"
 }
 
+export enum PanelSize {
+  xSmall = `9"x12"`,
+  small = `10.5"x14"`,
+  medium = `12.5"x16"`,
+  large = `15.5"x18"`
+}
+
 export enum HandleType {
-  light = 'light',
   normal = 'normal',
   heavy = 'heavy'
 }
 
 export enum HandleColor {
-  biege = 'biege',
+  ivory = 'ivory',
+  orange = 'orange',
+  white = 'white',
+  blue = 'blue',
   green = 'green',
+  pink = 'pink',
   red = 'red',
-  blue = 'blue'
+  yellow = 'yellow',
+  beige = 'beige',
+  violet = 'violet',
+  grey = 'grey',
+  black = 'black',
+
+}
+
+export enum PanelColor {
+  ivory = 'ivory',
+  orange = 'orange',
+  white = 'white',
+  blue = 'blue',
+  green = 'green',
+  pink = 'pink',
+  red = 'red',
+  yellow = 'yellow',
+  beige = 'beige',
+  violet = 'violet',
+  grey = 'grey',
+  black = 'black',
+}
+
+export enum BorderColor {
+  ivory = 'ivory',
+  orange = 'orange',
+  white = 'white',
+  blue = 'blue',
+  green = 'green',
+  pink = 'pink',
+  red = 'red',
+  yellow = 'yellow',
+  beige = 'beige',
+  violet = 'violet',
+  grey = 'grey',
+  black = 'black',
 }
 
 export interface LocalCart {
   bagType: BagType;
+  panelSize: PanelSize;
+  borderSize: number;
+  panelGSM:number;
+  borderGSM:number;
   handleType: HandleType;
   handleColor: HandleColor;
-  borderGSM: number;
-  borderColor: HandleColor;
+  panelColor:PanelColor;
+  borderColor: BorderColor;
   amount: number;
 }
 
@@ -48,7 +97,7 @@ export default function NonWovenTile() {
         </div>
         <div className='flex justify-evenly w-full'>
           <Link href='/shop/non-woven' className='px-4 py-2 bg-[#01a9e9]/40 hover:bg-[#01a9e9]/60 rounded-full text-xs font-bold tracking-widest text-[#fefffe]' > CUSTOMIZE </Link>
-          <button onClick={() => dispatch(addQuantity({ bagType: BagType.nonWoven, handleType: HandleType.normal, handleColor: HandleColor.biege, borderGSM: 90, borderColor: HandleColor.green, amount: 1000 }))} className='px-4 py-2 bg-[#e40089]/40 hover:bg-[#e40089]/60 rounded-full text-xs font-bold tracking-widest text-[#fefffe]'>
+          <button onClick={() => dispatch(addQuantity({ bagType: BagType.nonWoven, panelSize: PanelSize.medium, borderSize:6, panelGSM:60, borderGSM: 60, handleType: HandleType.normal, handleColor: HandleColor.orange, panelColor: PanelColor.ivory ,borderColor: BorderColor.orange, amount: 1000 }))} className='px-4 py-2 bg-[#e40089]/40 hover:bg-[#e40089]/60 rounded-full text-xs font-bold tracking-widest text-[#fefffe]'>
             ADD TO CART
           </button>
         </div>
