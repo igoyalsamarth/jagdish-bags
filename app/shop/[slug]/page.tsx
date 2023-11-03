@@ -102,6 +102,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     <section className='flex flex-col'>
                         <p className='text-sm font-bold text-gray-500 tracking-widest uppercase'>BAG PREVIEW</p>
                         {<div><p>{bag.bagType}, {bag.borderColor}, {bag.borderGSM}, {bag.handleColor}, {bag.handleType}</p></div>}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 1080 1080"><title>bag-2</title><rect x="376.76" y="440.59" width="488" height="576.57" fill="#ef4444"/><path d="M376.76,442.32l-145.88-71.2L217,364.18l-1.73,569.91a10.49,10.49,0,0,0,6,9.49c-1.58,13.36,149.32,82.83,155.5,73.57" fill='#1cd5ff'/><path d="M217,364.18l156.11,76.37a17.58,17.58,0,0,0,7.74,1.76l483.92-1.72-153-74.81a15.9,15.9,0,0,0-6.94-1.6H217" fill='#6d6e71'/><path d="M776.18,440.59v-182c0-66-68.42-119.5-152.82-119.5s-152.83,53.5-152.83,119.5v182" fill='none' stroke='#f4f5f6' strokeMiterlimit='10' strokeWidth='20px'/><path d="M640.73,363.47v-182c0-66-68.43-119.5-152.83-119.5S335.08,115.5,335.08,181.5v182" fill='none' stroke='#f4f5f6' strokeMiterlimit='10' strokeWidth='20px'/></svg>
                     </section>
                     <section className='flex justify-center'>
                         <button onClick={()=> dispatch(addQuantity(bag))} className=" w-fit px-4 py-2 bg-[#01a9e9]/40 hover:bg-[#01a9e9]/60 rounded-full text-xs font-bold tracking-widest text-[#fefffe]">ADD TO CART</button>
