@@ -37,8 +37,8 @@ export default function CartTotal() {
         <div className="flex flex-col gap-6 items-center justify-center w-full">
             {items.map((Items: LocalCart, index: number) => {
                 return (
-                    <div className="flex justify-between items-center w-full" key={index}>
-                        <p className='text-sm font-semibold text-gray-400'>{Items.bagType} Bags <br /> <span className="text-xs font-light italic">Qty.: {Items.amount}</span></p>
+                    <div className="flex justify-between items-start w-full" key={index}>
+                        <p className='text-sm font-semibold text-gray-400 capitalize'>{Items.bagType} Bags <br /> <span className="text-xs font-light italic">Qty.: {Items.amount}</span></p>
                         <p className="text-sm font-bold text-gray-500 text-center">₹ {Items.amount * 20}</p>
                     </div>
                 );
