@@ -9,36 +9,36 @@ import { useState } from "react";
 const borderMarks = [
     {
         value: 4,
-        label: '4"',
+        label: `4"`,
     },
     {
         value: 4.5,
-        label: '4.5"',
+        label: `4.5"`,
     },
     {
         value: 5.25,
-        label: '5.25"',
+        label: `5.25"`,
     },
     {
         value: 6,
-        label: '6"',
+        label: `6"`,
     },
     {
         value: 6.5,
-        label: '6.5"',
+        label: `6.5"`,
     },
     {
         value: 8,
-        label: '8"',
+        label: `8"`,
     },
     {
         value: 9.5,
-        label: '9.5"',
+        label: `9.5"`,
     },
 ];
 
 function valuetext(value: number) {
-    return `${value}GSM`;
+    return `${value}`;
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
