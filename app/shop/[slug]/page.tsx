@@ -33,7 +33,7 @@ const borderMarks = [
     },
     {
         value: 9.5,
-        label: `9.5"`,
+        label: '9.5"',
     },
 ];
 
@@ -51,7 +51,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             <div className='grid grid-cols-12 sm:grid-cols-6 md:grid-cols-6 2xl:w-[1170px] xl:w-[962px] lg:w-[738px] md:w-[451px] sm:w-[95%] py-10 gap-10 h-fit'>
                 <div className="flex flex-col col-span-8 lg:col-span-12 md:col-span-6 sm:col-span-6 gap-4">
                     <section className='flex flex-col w-full bg-[#fefffe] rounded-xl p-4 gap-4'>
-                        <p className='text-sm font-bold text-gray-500 tracking-widest uppercase'>PANEL SIZE <span className="text-sm font-light lowercase">(w"xh")</span></p>
+                        <p className='text-sm font-bold text-gray-500 tracking-widest uppercase'>PANEL SIZE <span className="text-sm font-light lowercase">{'(w"xh")'}</span></p>
                         <div className="flex flex-wrap items-center w-full justify-evenly gap-6">
                             <button className={`w-[100px] border border-gray-200 rounded-full py-2  font-bold text-sm text-gray-600 hover:shadow-lg hover:drop-shadow-lg duration-500 ${bag.panelSize==='9"x12"'? 'shadow-lg drop-shadow-lg':''}`} onClick={() => setBag({ ...bag, panelSize: PanelSize.xSmall })}>X.SMALL<br/><p className="font-bold text-[12px] text-gray-400">{PanelSize.xSmall}</p></button>
                             <button className={`w-[100px] border border-gray-200 rounded-full py-2  font-bold text-sm text-gray-600 hover:shadow-lg hover:drop-shadow-lg duration-500 ${bag.panelSize==='10.5"x14"'? 'shadow-lg drop-shadow-lg':''}`} onClick={() => setBag({ ...bag, panelSize: PanelSize.small })}>SMALL<br/><p className="font-bold text-[12px] text-gray-400">{PanelSize.small}</p></button>
